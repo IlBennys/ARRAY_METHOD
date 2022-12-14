@@ -215,19 +215,18 @@ const movies = [
 /* ESERCIZIO 10
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
-
+console.log("---------- ESERCIZIO 10 ----------")
+const filmAnnoVecchio = movies.map((movie) => movie.Year) //abbiamo creato array contenente stringhe di anni
+filmAnnoVecchio.sort()
+console.log("il film più vecchio è", filmAnnoVecchio[0])
 /* ESERCIZIO 11
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
-
+console.log("---------- ESERCIZIO 11 ----------")
 /* ESERCIZIO 12
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
 */
 console.log("---------- ESERCIZIO 12 ----------")
-
-const nomiFilm2 = []
-movies.forEach((num) => nomiFilm2.push(movies[num].Title))
-console.log(nomiFilm2)
 
 /* ESERCIZIO 13
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
