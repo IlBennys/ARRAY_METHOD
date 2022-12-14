@@ -16,35 +16,32 @@ strFunz("ciao", "ragazzi")
   Scrivi una funzione che torni un array di 10 elementi; ognuno di essi deve essere un valore random compreso tra 0 e 100 (incluso).
 */
 console.log("---------- ESERCIZIO 2 ----------")
-
+const numbers = []
 const arrayDieci = function (n) {
-  let valoriCasuali = Math.floor(Math.random() * 101)
   for (let i = 0; i < 10; i++) {
-    console.log(valoriCasuali)
+    let valoriCasuali = Math.floor(Math.random() * 101)
+    numbers.push(valoriCasuali)
   }
-  return (n = valoriCasuali)
+  return numbers
 }
 console.log(arrayDieci())
+
 /* ESERCIZIO 3
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici (suggerimento: il metodo filter può aiutare)
 */
 console.log("---------- ESERCIZIO 3 ----------")
-const arrayPari = function (positiveNumb, n2, ...rest) {
-  const el = [1, 2, 3, 4, 5, 6, 7, 8, 9, 20]
-  for (let i = 0; i < el.length; i++) {
-    if (el[i] % 2 === 0) {
-      console.log("Sono pari: ", el[(1, 3, 5, 7, 9)])
-    } else if (el[i] % 2 !== 0) {
-      console.log("Sono dispari: ", el[(0, 2, 4, 6, 8)])
-    }
-  }
-  return arrayPari
+const arrayPari = function () {
+  const el = [1, 2, 8, 9, 20]
+  const pari = el.filter((numerosingolo) => {
+    return numerosingolo % 2 === 0
+  })
+  return pari
 }
 console.log(arrayPari())
 /* ESERCIZIO 4
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
-console.log("---------- ESERCIZIO 3 ----------")
+console.log("---------- ESERCIZIO 4 ----------")
 const elementi = [1, 2, 3, 4, 5, 6, 7, 8, 9, 20]
 let counter = 0
 elementi.forEach((num) => console.log((counter += num)))
@@ -52,19 +49,52 @@ elementi.forEach((num) => console.log((counter += num)))
 /* ESERCIZIO 5
   Scrivi una funzione per sommare i numeri contenuti in un array (usare REDUCE)
 */
-
+console.log("---------- ESERCIZIO 5 ----------")
+const elConRed = [21, 52, 13, 14, 35, 26, 27, 18, 49, 20]
+const initValue = 0
+const sum = elConRed.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  initValue
+)
+console.log(sum)
 /* ESERCIZIO 6
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
+console.log("---------- ESERCIZIO 6 ----------")
+
+const soloNum = [7, 14, 21]
+
+const map1 = soloNum.map((n) => n + 5)
+console.log(map1)
 
 /* ESERCIZIO 8
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
+console.log("---------- ESERCIZIO 8 ----------")
+
+const soloString = ["Siamo", "dei", "programmatori"]
+const lunghezzaFrase = soloString.length
+console.log(lunghezzaFrase)
+const map2 = soloString.map((n) => n)
+console.log(map2.length)
 
 /* ESERCIZIO 9
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
+console.log("---------- ESERCIZIO 9 ----------")
+
+const creareArray = function () {
+  const arrVuoto = []
+  for (let i = 0; i < 99; i++) {
+    if ((i + 1) % 2 !== 0) {
+      arrVuoto.push(i + 1)
+    }
+  }
+  console.log(arrVuoto)
+  return arrVuoto
+}
+creareArray()
 
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
 const movies = [
@@ -193,6 +223,11 @@ const movies = [
 /* ESERCIZIO 12
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
 */
+console.log("---------- ESERCIZIO 12 ----------")
+
+const nomiFilm2 = []
+movies.forEach((num) => nomiFilm2.push(movies[num].Title))
+console.log(nomiFilm2)
 
 /* ESERCIZIO 13
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
